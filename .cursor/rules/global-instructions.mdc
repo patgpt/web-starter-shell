@@ -1,0 +1,23 @@
+---
+description: Use for all code tasks
+globs: 
+alwaysApply: true
+---
+
+# Global Rules
+
+
+- TSDoc everything on create or update.
+- Always use Typescript types and best practices.
+- Use Tailwindcss V4.
+- Use DaisyUI classes wherever possible.
+- Automatically fix all linter errors.
+
+# NextJS Global Rules 
+
+- Use server componenets wherever possible avoid client side code.
+- Pure functions.
+
+# Package Manager 
+- Bun. 
+- Do not install outdated packages without prompting me first. 

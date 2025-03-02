@@ -1,0 +1,28 @@
+# YellowDog Web Starter Bun Configuration
+# https://bun.sh/docs/config/bunfig
+
+# Registry configuration
+[install]
+registry = "https://registry.npmjs.org/"
+# Default global installation directory
+globalDir = "~/.bun/install/global"
+
+# Dev server configuration
+[dev]
+port = 3000
+host = "localhost"
+
+# Test configuration
+[test]
+# For more details: https://bun.sh/docs/cli/test
+
+# Runtime compatibility settings
+[runtime]
+jsx = "react"
+jsxFactory = "React.createElement"
+jsxFragment = "React.Fragment"
+jsxImportSource = "react"
+
+# Define scopes for organization packages
+[install.scopes]
+yellowdog = { registry = "https://registry.npmjs.org/" } 

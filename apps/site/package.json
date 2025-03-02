@@ -1,0 +1,57 @@
+{
+  "name": "yellowdog-web-starter",
+  "version": "1.0.0",
+  "description": "An opinionated web starter theme with modern tech stack",
+  "author": "PatGPT <hey@yellowdog.digital>",
+  "license": "MIT",
+  "homepage": "https://yellowdog.digital",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patgpt/yellowdog-web-starter"
+  },
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --ext .ts,.tsx",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "test": "jest",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "@repo/ui": "*",
+    "@repo/theme": "*",
+    "@repo/utils": "*",
+    "@repo/hooks": "*",
+    "@repo/types": "*",
+    "@repo/api-client": "*"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "autoprefixer": "latest",
+    "daisyui": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "postcss": "latest",
+    "prettier": "latest",
+    "tailwindcss": "^4.0.0",
+    "typescript": "latest",
+    "@repo/eslint-config": "*",
+    "@repo/typescript-config": "*",
+    "@repo/tailwind-config": "*",
+    "@repo/test-config": "*"
+  },
+  "packageManager": "bun@1.2.2",
+  "engines": {
+    "node": ">=18.0.0",
+    "bun": ">=1.0.0"
+  }
+}

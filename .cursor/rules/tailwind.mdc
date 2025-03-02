@@ -1,0 +1,176 @@
+---
+description: Tailwind Guidelines
+globs: globals.css
+alwaysApply: false
+---
+## LLM Styling Instructions (MDC Format)
+
+### General Guidelines
+1. **Use the appropriate variants for each situation**
+   - Ensure that all interactive elements (buttons, inputs, etc.) account for `:hover`, `:focus`, `:active`, and other state-based styles.
+   - Apply every possible ARIA attribute for accessibility.
+   - Maintain semantic HTML where applicable.
+
+2. **Ensure Accessibility (a11y)**
+   - Use appropriate `aria-` attributes for interactivity.
+   - Implement focus states for keyboard navigation.
+   - Follow best practices for form element states.
+
+3. **Handle All Component States**
+   - Every component must have a defined appearance for different states (e.g., `:hover`, `:focus`, `:disabled`, etc.).
+   - Buttons and links should use variants like `aria-pressed`, `aria-selected`, and `aria-expanded` where applicable.
+   - Ensure interactive components are keyboard accessible.
+
+### Using Theme Variables for Consistency
+To maintain a cohesive design system, always use theme variables for styling components. This ensures consistency and adaptability across the UI.
+
+#### **Example: Primary Button**
+**HTML:**
+```html
+<button class="btn-primary">Save changes</button>
+```
+
+**CSS:**
+```css
+@import "tailwindcss";
+
+@layer components {
+  .btn-primary {
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-violet-500);
+    padding-inline: var(--spacing-5);
+    padding-block: var(--spacing-2);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-white);
+    box-shadow: var(--shadow-md);
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-violet-700);
+      }
+    }
+  }
+}
+```
+
+#### **Best Practices:**
+- Always use `var(--theme-variable)` instead of hardcoded values.
+- For more complex UI components, use **template partials** to encapsulate styles and structure in one place.
+
+### Theme Variables
+Theme variables are special CSS variables defined using the `@theme` directive that influence which utility classes exist in your project.
+
+For example, you can add a new color to your project by defining a theme variable like `--color-mint-500`:
+
+**CSS:**
+```css
+@import "tailwindcss";
+@theme {
+  --color-mint-500: oklch(0.72 0.11 178);
+}
+```
+
+Now you can use utility classes like `bg-mint-500`, `text-mint-500`, or `fill-mint-500` in your HTML:
+
+**HTML:**
+```html
+<div class="bg-mint-500">
+  <!-- ... -->
+</div>
+```
+
+#### **Why `@theme` instead of `:root`?**
+Theme variables aren't just CSS variables — they also instruct Tailwind to create new utility classes that you can use in your HTML.
+
+#### **Theme Variable Namespaces**
+Theme variables are defined in namespaces, and each namespace corresponds to one or more utility class or variant APIs.
+
+Defining new theme variables in these namespaces will make new corresponding utilities and variants available in your project:
+
+| Namespace | Utility classes |
+|-----------|----------------|
+| `--color-*` | Color utilities like `bg-red-500`, `text-sky-300`, and many more |
+| `--font-*` | Font family utilities like `font-sans` |
+| `--text-*` | Font size utilities like `text-xl` |
+| `--font-weight-*` | Font weight utilities like `font-bold` |
+| `--tracking-*` | Letter spacing utilities like `tracking-wide` |
+| `--leading-*` | Line height utilities like `leading-tight` |
+| `--breakpoint-*` | Responsive breakpoint variants like `sm:*` |
+| `--container-*` | Container query variants like `@sm:*` and size utilities like `max-w-md` |
+| `--spacing-*` | Spacing and sizing utilities like `px-4`, `max-h-16`, and many more |
+| `--radius-*` | Border radius utilities like `rounded-sm` |
+| `--shadow-*` | Box shadow utilities like `shadow-md` |
+| `--inset-shadow-*` | Inset box shadow utilities like `inset-shadow-xs` |
+| `--drop-shadow-*` | Drop shadow filter utilities like `drop-shadow-md` |
+| `--blur-*` | Blur filter utilities like `blur-md` |
+| `--perspective-*` | Perspective utilities like `perspective-near` |
+| `--aspect-*` | Aspect ratio utilities like `aspect-video` |
+| `--ease-*` | Transition timing function utilities like `ease-out` |
+| `--animate-*` | Animation utilities like `animate-spin` |
+
+### Additional Tailwind Features
+
+#### **Defining Animation Keyframes**
+Define the `@keyframes` rules for your `--animate-*` theme variables within `@theme` to include them in your generated CSS.
+
+#### **Using Theme Variables in Custom CSS**
+You can use your theme variables to get access to your design tokens when writing custom CSS:
+
+**CSS:**
+```css
+@import "tailwindcss";
+@layer components {
+  .typography {
+    p {
+      font-size: var(--text-base);
+      color: var(--color-gray-700);
+    }
+  }
+}
+```
+
+#### **Utility Classes for Color Palette**
+| Utility | Description |
+|---------|-------------|
+| `bg-*` | Sets the background color of an element |
+| `text-*` | Sets the text color of an element |
+| `decoration-*` | Sets the text decoration color of an element |
+| `border-*` | Sets the border color of an element |
+| `outline-*` | Sets the outline color of an element |
+| `shadow-*` | Sets the color of box shadows |
+| `ring-*` | Sets the color of ring shadows |
+| `fill-*` | Sets the fill color of SVG elements |
+| `stroke-*` | Sets the stroke color of SVG elements |
+
+### Advanced Tailwind Features
+
+#### **Custom Directives**
+- `@theme` → Define design tokens like fonts, colors, and breakpoints.
+- `@utility` → Add custom utilities with variants.
+- `@variant` → Apply a Tailwind variant to styles.
+- `@apply` → Inline utility classes into custom CSS.
+
+#### **Example of Multiple Variants with Nesting**
+**CSS:**
+```css
+.my-element {
+  background: white;
+  @variant dark {
+    @variant hover {
+      background: black;
+    }
+  }
+}
+```
+
+#### **Using `--alpha()` and `--spacing()`**
+- `--alpha()` → Adjust the opacity of a color.
+- `--spacing()` → Generate a spacing value based on your theme.
+
+**CSS:**
+```css
+.my-element {
+  color: --alpha(var(--color-lime-300) / 50%);
+  margin: --spacing(4);
+}
+```
+

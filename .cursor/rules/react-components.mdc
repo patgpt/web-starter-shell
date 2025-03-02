@@ -1,0 +1,32 @@
+---
+description: Guidelines for React Components
+globs: packages/ui/**/*.tsx
+alwaysApply: false
+---
+
+# Styling 
+
+- ALWAYS Use dailsyUI classes wherever possible
+- ALWAYS built to be responsive using tailwind utility functions
+- ALWAYS use tailwind utilities to improve a11y
+- If a tailwind class string in `className` is used more than once ALWAYS extract it to a `tailwindcss` `@utility` or `component` in `globals.css`
+- Support light and Dark mode
+
+# Typescript types
+- If a 3rd party package is used ALWAYS import the official type from the package directory and create a type alias and extend if nessesary
+- ALWAYS Create generic types wherever possible
+
+# Comments 
+- ALWAYS TSDoc in detail with `@description` and `@example` each component upon creation or modification 
+
+# Stories and Tests
+- ALWAYS Create a corresponding `component.story.tsx` and `component.spec.ts` for each component created, update on modification. 
+
+# a11y and i18n 
+- ALWAYS make the component completely `i18n` and `a11y` friednly. In cases when it can not be done with html, jsx or css prompt user for guidance. 
+
+# Design Pattern 
+- opt for atomic design pattern
+
+# Documentation 
+- Upon creation and completion or update of a component implementation ALWAYS add documentation and examples to the `apps/docs` website. 
