@@ -5,6 +5,33 @@ export default defineConfig({
   description: "Documentation for the Web Starter Shell monorepo",
   // Ignore dead links during build
   ignoreDeadLinks: true,
+  // Add proper base path
+  base: '/',
+  // Dev server options
+  vite: {
+    server: {
+      host: '0.0.0.0',
+      cors: true,
+      strictPort: false,
+      hmr: {
+        overlay: true
+      }
+    },
+    // Enable better error reporting
+    optimizeDeps: {
+      exclude: []
+    },
+    // Ensure source maps in dev mode
+    build: {
+      sourcemap: true,
+      minify: false,
+      cssMinify: false
+    },
+    // For debugging
+    logLevel: 'info'
+  },
+  // Asset resolution for proper loading
+  assetsDir: 'assets',
   themeConfig: {
     logo: '/logo.svg',
     nav: [
