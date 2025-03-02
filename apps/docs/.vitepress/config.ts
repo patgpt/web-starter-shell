@@ -11,6 +11,8 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/' },
       { text: 'API', link: '/api/' },
+      { text: 'Contributing', link: '/contributing' },
+      { text: 'YellowDog Digital', link: 'https://yellowdog.digital' }
     ],
     sidebar: {
       '/guide/': [
@@ -43,11 +45,16 @@ export default defineConfig({
       ]
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/yourusername/web-starter-shell' }
+      { icon: 'github', link: 'https://github.com/patgpt/web-starter-shell' },
+      { icon: 'twitter', link: 'https://twitter.com/AGIManifesto' },
+      { icon: 'linkedin', link: 'https://linkedin.com/in/patgpt' }
     ],
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2024'
+      copyright: 'Copyright © 2024 YellowDog Digital'
+    },
+    editLink: {
+      pattern: 'https://github.com/patgpt/web-starter-shell/edit/main/apps/docs/:path'
     }
   }
 }) 
