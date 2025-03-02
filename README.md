@@ -1,57 +1,77 @@
-# Turborepo starter
+# 🚀 Web Starter Shell
 
-This Turborepo starter is maintained by the Turborepo core team.
+<div align="center">
 
-## Using this example
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Drizzle](https://img.shields.io/badge/Drizzle-ORM-18c964?style=for-the-badge&logo=drizzle)](https://orm.drizzle.team/)
+[![Bun](https://img.shields.io/badge/Bun-1.2.2-f9f1e1?style=for-the-badge&logo=bun)](https://bun.sh/)
+[![Postgres](https://img.shields.io/badge/Postgres-42759B?style=for-the-badge&logo=postgresql)](https://www.postgresql.org/)
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel)](https://vercel.com/)
 
-Run the following command:
+[![Twitter Follow](https://img.shields.io/twitter/follow/AGIManifesto?style=social)](https://twitter.com/AGIManifesto)
+[![GitHub stars](https://img.shields.io/github/stars/patgpt/web-starter-shell?style=social)](https://github.com/patgpt/web-starter-shell)
 
-```sh
-npx create-turbo@latest
+</div>
+
+A comprehensive, modern web development starter kit built as a monorepo using Turborepo, with Next.js 15, TailwindCSS 4, TypeScript, Drizzle ORM, and more.
+
+## ✨ Features
+
+- 📦 **Monorepo Structure** - Efficient code sharing with Turborepo
+- 🖥️ **Next.js 15** - Using the App Router and Server Components
+- 🎨 **TailwindCSS 4** - With OKLCH color support and custom variants
+- 📘 **TypeScript** - Type-safe development experience
+- 🗃️ **Drizzle ORM** - Type-safe database queries with Postgres
+- ⚡ **Bun** - Fast JavaScript runtime and package manager
+- 🚢 **Vercel Integration** - Optimized for deployment on Vercel
+- 📚 **VitePress Docs** - Comprehensive documentation
+
+## 📋 What's Inside
+
+### Apps
+
+- `web`: Main [Next.js](https://nextjs.org/) web application
+- `docs`: [VitePress](https://vitepress.dev/) documentation site
+
+### Packages
+
+- `@repo/ui`: React component library shared by applications
+- `@repo/api-client`: Type-safe API client for backend communication
+- `@repo/hooks`: Reusable React hooks for common UI functionalities
+- `@repo/utils`: Common utility functions
+- `@repo/types`: Shared TypeScript type definitions
+- `@repo/eslint-config`: ESLint configurations
+- `@repo/typescript-config`: TypeScript configurations
+- `@repo/tailwind-config`: Shared Tailwind CSS configuration
+- `@repo/test-config`: Standardized test configuration
+- `@repo/theme`: Shared theme configuration
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- [Bun](https://bun.sh/) (v1.2.0 or higher)
+- [Node.js](https://nodejs.org/) (v18.0.0 or higher)
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/patgpt/web-starter-shell.git
+cd web-starter-shell
+
+# Install dependencies
+bun install
+
+# Start development servers
+bun run dev
 ```
 
-## What's inside?
+## 🧩 Available Scripts
 
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
-```
-
-### Remote Caching
-
+- `bun run build` - Build all apps and packages
 > [!TIP]
 > Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
 

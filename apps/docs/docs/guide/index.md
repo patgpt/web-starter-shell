@@ -25,4 +25,14 @@ This starter kit is designed for developers who want to:
 - Build with modern technologies like Next.js, TailwindCSS, and TypeScript
 - Have a solid foundation for scaling their application
 
+## About the Creator
+
+Web Starter Shell is created and maintained by [YellowDog Digital](https://yellowdog.digital). You can connect with the creator:
+
+- **Twitter**: [@AGIManifesto](https://twitter.com/AGIManifesto)
+- **GitHub**: [patgpt](https://github.com/patgpt)
+- **LinkedIn**: [patgpt](https://linkedin.com/in/patgpt)
+
+Your feedback and contributions to this project are welcome! Check out our [Contributing](/contributing) guide to get involved.
+
 Continue to the [Installation](/guide/installation) guide to get started. 
